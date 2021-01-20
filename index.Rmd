@@ -1,5 +1,5 @@
 --- 
-title: "Guide des bonnes pratiques `utilitR`"
+title: "Guide des bonnes pratiques en `R` développé à l'Insee"
 author: "Version 1 - Mai 2021"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -15,7 +15,7 @@ favicon: resources/logo-utilitr.png
 ---
 
 
-# Un guide des bonnes pratiques développé à l'Insee {-}
+# Le guide des bonnes pratiques `utilitR` {-}
 
 ```{=html}
 <a href='https://www.utilitr.org'><img src='resources/logo-utilitr.png' align="right" height="139px" /></a>
