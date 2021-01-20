@@ -1,9 +1,9 @@
-Package: cookbookInsee
+Package: pratiquesInsee
 Type: Book
 Title: Documentation R de l'Insee
 Version: 0.0.0.9000
-Description: Ce dépôt comprend les fichiers relatifs à la 
-    documentation R de l'Insee.
+Description: Ce dépôt comprend les fichiers relatifs au guides des bonnes 
+    pratiques en R de l'Insee.
 Authors@R: c(
     person("Lino"        , "Galiana"   , role = c("aut", "cre"), email = "lino.galiana@insee.fr"),
     person("Olivier"     , "Meslin"    , role = c("aut", "cre"), email = "olivier.meslin@insee.fr"),
@@ -41,7 +41,6 @@ Imports:
     fontawesome
 Suggests: 
     cranlogs,
-    haven,
     rprojroot
 Remotes:
     InseeFrLab/doremifasolData,
