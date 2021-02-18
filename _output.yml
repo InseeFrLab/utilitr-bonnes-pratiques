@@ -8,7 +8,8 @@ utilitr::gitbook_utilitr:
         <li><a href="https://github.com/InseeFrLab/utilitr-bonnes-pratiques.git" target="blank">Code source</a></li>
 #     download: ["pdf", "epub"]
 
-pagedown::html_paged:
+utilitr::html_paged:
+  new_session: yes
   front_cover: "resources/logo-utilitR.svg"
   extra_dependencies:
   - !expr rmarkdown::html_dependency_font_awesome()
