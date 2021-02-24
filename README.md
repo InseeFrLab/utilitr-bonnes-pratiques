@@ -7,7 +7,8 @@
 
  
 Code source du guide des bonnes pratiques développé dans le cadre
-du projet `UtilitR`. 
+du projet `UtilitR`. Le site déployé 
+est disponible sur www.pratiques.utilitr.org
 
 Les autres contenus `utilitR` sont disponibles sur une autre page
 Github : https://github.com/InseeFrLab/utilitR
