@@ -4,12 +4,12 @@ clean: true
 delete_merged_file: true
 rmd_files: 
  - index.Rmd
- - 02_Bonnes_pratiques/2-Intro_partie_bonnes_pratiques.Rmd
- - 02_Bonnes_pratiques/02-nommage.Rmd
- - 02_Bonnes_pratiques/03-syntaxe.Rmd
- - 02_Bonnes_pratiques/04-organisation.Rmd
- - 02_Bonnes_pratiques/05-regles.Rmd
- - 02_Bonnes_pratiques/06-outils.Rmd
+ - fiches/2-Intro_partie_bonnes_pratiques.Rmd
+ - fiches/02-nommage.Rmd
+ - fiches/03-syntaxe.Rmd
+ - fiches/04-organisation.Rmd
+ - fiches/05-regles.Rmd
+ - fiches/06-outils.Rmd
 language:
   ui:
     chapter_name: "Chapitre "
