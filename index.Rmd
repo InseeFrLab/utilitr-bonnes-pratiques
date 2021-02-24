@@ -23,6 +23,12 @@ favicon: resources/logo-utilitr.png
 
 **VERSION TEMPORAIRE VOUEE A EVOLUER**
 
+Ce guide des bonnes pratiques accompagne la documentation principale
+`utilitR` disponible 
+à l'adresse [book.utilitr.org](https://www.book.utilitr.org). L'objet de
+ce guide est de proposer quelques conventions pour rendre les 
+projets `R` plus reproductibles et pérennes. 
+
 
 ::: {.auteurs data-latex=""}
 Le projet `utilitR` est un projet collaboratif qui a bénéficié des contributions de : `r paste0(paste(format(Filter(function(x) !("cph" %in% x$role), desc::desc_get_authors()), include = c("given", "family")), collapse = ", "), ".")`
