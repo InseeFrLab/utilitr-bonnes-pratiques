@@ -6,13 +6,8 @@ utilitr::gitbook_utilitr:
         <li><a href="./">Documentation R</a></li>
       after: |
         <li><a href="https://github.com/InseeFrLab/utilitr-bonnes-pratiques.git" target="blank">Code source</a></li>
-#     download: ["pdf", "epub"]
 
 utilitr::html_paged:
   new_session: yes
   self_contained: false
   front_cover: "resources/logo-utilitR.svg"
-  extra_dependencies:
-  - !expr rmarkdown::html_dependency_font_awesome()
-#  knit: 
-#    pagedown::chrome_print
