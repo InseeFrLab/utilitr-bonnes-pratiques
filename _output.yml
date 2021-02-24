@@ -10,6 +10,7 @@ utilitr::gitbook_utilitr:
 
 utilitr::html_paged:
   new_session: yes
+  self_contained: false
   front_cover: "resources/logo-utilitR.svg"
   extra_dependencies:
   - !expr rmarkdown::html_dependency_font_awesome()
