@@ -21,7 +21,7 @@ favicon: resources/logo-utilitr.png
 <a href='https://www.utilitr.org'><img src='resources/logo-utilitr.png' align="right" height="139px" /></a>
 ```
 
-`r colorize("VERSION TEMPORAIRE VOUEE A EVOLUER", "red")`
+**"VERSION TEMPORAIRE VOUEE A EVOLUER", "red"**
 
 
 ```{r, include=FALSE}
