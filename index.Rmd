@@ -1,25 +1,21 @@
 --- 
-title: "Guide des bonnes pratiques en `R` développé à l'Insee"
-author: "Version 1 - Mai 2021"
+title: "Guide des bonnes pratiques en `R` à l'usage des statisticiens publics"
+author: "Un complément à la documentation `utilitR`"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: dvipsnames
-#bibliography: [book.bib, packages.bib]
-biblio-style: apalike
 link-citations: yes
 subparagraph: true
 cover-image: "resources/logo-utilitr.png"
 description: "UtilitR: Une documentation utile à R"
 favicon: resources/logo-utilitr.png
+links-to-footnotes: true
 ---
 
 
 # Le guide des bonnes pratiques `utilitR` {-}
 
-```{=html}
-<a href='https://www.utilitr.org'><img src='resources/logo-utilitr.png' align="right" height="139px" /></a>
-```
 
 **VERSION TEMPORAIRE VOUEE A EVOLUER**
 
