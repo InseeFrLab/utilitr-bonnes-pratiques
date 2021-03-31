@@ -55,17 +55,17 @@ jobs:
           Rscript -e "install.packages(c('remotes'))"
           Rscript -e "remotes::install_deps(dependencies = TRUE)"
       - name: Render Book
-        run: Rscript -e 'bookdown::render_book("index.Rmd", output_dir = "_public", output_format = "utilitr::html_document")'
+        run: Rscript -e 'bookdown::render_book("index.Rmd", output_dir = "_public", output_format = "utilitr::bs4_utilitr")'
       - uses: actions/upload-artifact@v2
         with:
           name: _public
           path: _public/
           retention-days: 5
       - name: Install npm
-        if: ${{ github.repository == 'inseefrlab/utilitr' }}
+        if: ${{ github.repository == 'inseefrlab/utilitr-bonnes-pratiques' }}
         uses: actions/setup-node@v1          
       - name: Deploy to Netlify
-        if: ${{ github.repository == 'inseefrlab/utilitr' }}
+        if: ${{ github.repository == 'inseefrlab/utilitr-bonnes-pratiques' }}
         # NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID added in the repo's secrets
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
