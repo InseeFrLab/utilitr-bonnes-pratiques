@@ -43,7 +43,7 @@ On pourra sauvegarder des objets intermédiaires au cours du script. Pour s'assu
 
 ## Noms des variables
 
-<span style="color:DarkBlue">**Nom de la variable**</span>  **Il est recommandé d'utiliser des substantifs pour nommer une variable**. Privilégier les *underscores* (par exemple `donnees_menages`) au CamelCase (par exemple `donneesMenages`). Si vous préférez le CamelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
+<span style="color:DarkBlue">**Nom de la variable**</span>  **Il est recommandé d'utiliser des substantifs pour nommer une variable**. Privilégier le snake_case (écriture avec des *underscores*, par exemple `donnees_menages`) au CamelCase (écriture avec des majuscules en début de nouveau mot, par exemple `donneesMenages`). Si vous préférez le CamelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
 
 <span style="color:DarkBlue">**Bonnes pratiques**</span> 
 
