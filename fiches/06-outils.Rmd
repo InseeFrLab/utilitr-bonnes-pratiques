@@ -103,3 +103,6 @@ conditional_output <- function(path){
 
 On peut trouver des aides mémoires en ligne grâce aux [cheatsheets](https://www.rstudio.com/resources/cheatsheets/). Celle relative à `Rstudio` est disponible [ici](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf).
 
+## Autres ressources en lignes
+
+En ligne également, le livre *Advanced R*(https://adv-r.hadley.nz) écrit par Hadley Wickham est une très bonne source pour consolider et approfondir ses connaissances fondamentales en R.
