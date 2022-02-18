@@ -64,6 +64,38 @@ La première approche, celle fondée sur des fonctions encapsulées dans un ou d
 
 Il est alors possible de se rendre directement à une section à partir de la fenêtre script (en bas avec les flêches).
 
+Il est possible de jouer sur le nombre de # pour hiérarchiser les titres sur plusieurs niveaux :
+```{r, eval = FALSE}
+# Extraction des données ---------------------------------------------------------
+ 
+## Données année précédente ------------------------------------------------------
+ 
+### paramètres -------------------------------------------------------------------
+ 
+### chargement du csv ------------------------------------------------------------
+```
+
+RStudio tient compte de cette hiérarchie dans son plan du script (petite fenêtre document outline en haut à droite). Cette approche permet aussi de gagner en lisibilité générale du script : les titres et sous-titres forment des séparateurs visuels des différentes parties du programme.
+ 
+Il peut être enfin utile de numéroter et de nommer les parties et sous-parties du script (tout comme on numérote les scripts dans une chaîne de traitement statistique) :
+```{r, eval = FALSE}
+# (I) Extraction des données ==================================================================
+ 
+## (1) Données année précédente -----------------------------------------
+ 
+### paramètres --------------------------------------
+ 
+### chargement du csv -------------------------------
+ 
+## (2) Données année actuelle -------------------------------------------
+ 
+### paramètres --------------------------------------
+ 
+### chargement du csv -------------------------------
+```
+
+Sauter deux lignes avant chaque grande partie permet aussi de bien les différencier visuellement ; on peut aussi jouer sur la différence d’épaisseur entre = et -, ou la longueur des lignes de traits (===== ou -----).
+
 ## Commentaires
 
 **Il est essentiel de commenter son code pour qu'il puisse être aisément repris et compris par autrui ou par soi-même dans le futur.** Il faut veiller à ce que les commentaires soient clairs et relativement courts.
