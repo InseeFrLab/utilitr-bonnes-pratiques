@@ -53,6 +53,29 @@ if (a>0){
 }
 ```
 
+Quand plusieurs lignes de code ont une même structure, il est utile d'ajouter des espaces pour aligner verticalement les éléments identiques.
+
+Par exemple, les 5 premières lignes de ce code ont la même structure (création d'une variable par la fonction sum(x, na.rm=T)) :
+```{r, eval = FALSE}
+tab1_det2 = base_fin[, .("total" = sum(total, na.rm=T), 
+                           "institutions" = sum(institutions, na.rm=T)
+                           "sociétés" = sum(sociétés, na.rm=T), 
+                           "oc" = sum(oc, na.rn=T)), 
+                           "autres" = sum(autres, na.rm=T),
+                            by = .(annee, niv_agr, niv_sagr)]`
+```
+
+On peut ajouter des espaces afin d'aligner verticalement les éléments identiques ou similaires :
+```{r, eval = FALSE}
+tab1_det2 = base_fin[, .("total"        = sum(total,        na.rm=T), 
+                         "institutions" = sum(institutions, na.rm=T)
+                         "sociétés"     = sum(sociétés,     na.rm=T), 
+                         "oc"           = sum(oc,           na.rn=T)), 
+                         "autres"       = sum(autres,       na.rm=T),
+                         by = .(annee, niv_agr, niv_sagr)]
+```
+On repère plus naturellement ce qui change d'une ligne à l'autre, et plus facilement les fautes de frappe.
+
 ## Espacement
 
 * **Les opérateurs binaires qui lient des objets entre eux (: `=`, `+`, `-`, `<-`, etc.) sont entourés d'espaces avant et après pour plus de lisibilité**. Exemple: on écrit `1 + 1 = 2` et non `1+1=2`;
