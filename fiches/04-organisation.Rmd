@@ -49,6 +49,42 @@ source("5_Sorties_graphiques.R", encoding = "UTF-8", echo = TRUE)
 
 La première approche, celle fondée sur des fonctions encapsulées dans un ou des packages, constitue une approche plus fiable pour la reproductibilité du code car elle évite les erreurs, parfois difficiles à détecter, liées aux environnements et chemin de noms des packages. La transformation de scripts modularisés en *packages* a été nettement facilité au cours des dernières années. Nous vous recommandons la dernière partie de la formation **Travail collaboratif avec R** à cet égard.
 
+## Organiser ses tests
+
+Il y a un sujet sur les **tests et contrôles** souvent rencontré par les statisticiens dans la rédaction de scripts. Faut-il ou non laisser dans le script les tests qui ont été effectués au cours du travail avec leurs résultats (éventuellement en commentaires donc désactivés) ?
+
+Plusieurs éléments tendent vers une réponse négative :
+* Ils sont souvent inutiles pour quelqu’un qui revient plus tard sur le script : inutile par exemple de voir que son rédacteur a regardé le nom des colonnes d’une table en sortie, compté son nombre d’observations ou regardé tel tri à plat.
+* Ils rompent le rythme de lecture du script, c’est donc aussi facteur de difficulté à le lire et à comprendre sa structure.
+Si l’on veut garder une trace des tests et contrôles qu’on a lancés, il faut les mettre dans un **script dédié** dans un répertoire à part. Cette pratique correspond à celle du développement de packages R, les tests étant typiquement dans un répertoire de test. Ils sont réalisés à chaque compilation du package et génèrent des erreurs ou des warnings selon ce qui est spécifié en cas de résultat non attendu. Cette approche est aussi celle du package *testthat*.
+
+Cette pratique permet de pouvoir récupérer les tests plus tard sans encombrer la chaîne de traitement, avec deux principaux intérêts : 
+*	lister les tests importants à relancer si l’on actualise le traitement ou le relance ;
+*	laisser une trace des résultats méritant une attention particulière (par exemple : « oui, la détection de doublons montre qu'il y a 17 doublons dans la table, mais c'est lié au retraitement des valeurs manquantes de la variable V1 et n'est pas problématique »). 
+*	pouvoir récupérer des morceaux de code pour ne pas avoir à les retaper ;
+
+Le lien vers le script de tests peut être indiqué en en-tête du script principal (qui réalise l’étude ou le traitement).
+
+Pour documenter ces tests, des commentaires dans le script suffisent, la documentation des tests pouvant donc rester minimale. Il est utile, sous chaque test, de mettre en commentaire aussi la date, les résultats même laconiquement, voire la décision prise suite au test. Cela peut donner un script avec plus de "texte" que de "code", ce qui n'est pas un problème en soi. 
+
+S'il y a plusieurs phases de tests (la première a donné lieu à des premiers correctifs, la version corrigée a été testée, etc), cela donne plusieurs scripts de tests *datés*, qui peuvent être très courts pour certains.
+
+
+Un test se caractérise par :
+*	un input déterminé ;
+*	un traitement à réaliser sur l'input ;
+*	un résultat attendu ;
+*	une action à générer selon la comparaison entre le résultat du traitement sur l'input et le résultat attendu.
+
+II faut donc distinguer les tests à proprement parler et les explorations :
+*	les tests à proprement parler répondent oui/non à une question bien déterminée. Si le test renvoie le résultat attendu, cela n'appelle à action, sinon il y a un correctif à faire.
+*	les explorations suivent une logique plus ouverte et consistent à se donner une idée des données qu'on traite (regarder les premières lignes de la table), ou des résultats qu'on sort (regarder les ordres de grandeur dans un premier tableau qu'on a sorti). Elles ont lieu en début du travail.
+On a envie de les garder car elles nous ont aidé à entrer dans le sujet, mais leur code n'est presque jamais intéressant. En revanche, il est très utile de noter précieusement et de façon synthétique leurs **conclusions notables** (par exemple, "la variable montant est en k€ et non en €", "la table T a une clef unique *toto* qui est manquante dans 1 % des cas", etc) à ne pas manquer par la suite.
+
+Les tests et résultats d’explorations qu’on choisit de garder finalement sont à **sélectionner** rétrospectivement, pour ne garder que les éléments pertinents. En cours de travail, les tests et explorations peuvent être un joyeux fourre-tout, mais si l’on veut les valoriser, supprimer beaucoup permet de laisser un script court et ciblé sur ce qui a un intérêt.
+
+En termes de qualité, le temps du regard rétrospectif sur le travail réalisé est fondamental. On fait ce travail rétrospectif en restructurant et commentant un script pour le rendre intelligible ; dans cette phase qui rend claires les choses, on découvre souvent des oublis ou des erreurs dans ce qui été fait au fil de l'eau. Ce travail rétrospectif s’opère aussi lors de l’écriture d’une documentation. La documentation d’un processus est presque aussi importante que le processus lui-même. C'est l'un des sujets centraux de la _qualité_ d'un travail statistique.
+
 ## Titres
 
 **Il est recommandé de mettre des titres aux sous-parties du script** pour plus de lisibilité, de la forme suivante:
