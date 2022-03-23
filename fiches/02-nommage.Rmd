@@ -39,7 +39,7 @@ On pourra sauvegarder des objets intermédiaires au cours du script. Pour s'assu
 <span style="color:DarkBlue">**Bonnes pratiques**</span>:
 
 * Ne pas utiliser de symboles spéciaux dans le nom du fichier (`-.,;:\/$`^`, caractères accentués, etc.);
-* Privilégier les *underscore* (par exemple `donnees_menages`) au CamelCase (consiste à donner un nom en mettant une majuscule à chaque début de mot : par exemple `donneesMenages`). Si vous préférez le CamelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
+* Privilégier le _snake_case_ (écriture avec des *underscores*, par exemple `donnees_menages`) au CamelCase (consiste à donner un nom en mettant une majuscule à chaque début de mot : par exemple `donneesMenages`). Si vous préférez le CamelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
 
 ## Noms des variables
 
@@ -67,7 +67,13 @@ TRUE == T
 
 ## Noms des fonctions
 
-<span style="color:DarkBlue">**Nom de la fonction**</span> **Il est recommandé d'utiliser des verbes pour nommer une fonction**. Il est préférable de nommer une fonction en fonction de ce qu'elle fait. Privilégier les `underscores` (par exemple `calculer_taxes`) au CamelCase (par exemple calculerTaxes). Si vous préférez le camelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
+<span style="color:DarkBlue">**Nom de la fonction**</span> Une bonne pratique de nommage des fonctions est de les nommer d'après leur **résultat** : on gagne alors en fluidité/clarté de lecture du programme. Si le substantif qui nomme ainsi la fonction suggère naturellement le type d'objet obtenu, c'est encore mieux. Le nom d'une fonction n'est donc normalement pas basé sur un verbe (qui sous-entend une action) car dans R il n’y a pas de **procédures**, qui sont des suites d’instructions (paramétrées par des éléments en entrée) ; il n’y a que des **fonctions**, qui sont des passerelles vers un résultat (paramétrées par des éléments en entrée). On préférera nommer `montant_euros` une fonction qui donne un montant en euros à partir d'un montant en francs (l'instruction `mnt_annuel = 12 * montant_euros(120)` se lit telle quelle et il y a égalité de type d'un côté et de l'autre du signe =) que `conversion_euros` et surtout que `convertit_euros` (`mnt_annuel = 12 * conversion_euros(120)`, `mnt_annuel = 12 * convertit_euros(120)`).
+
+Quand on utilise une fonction programmée par quelqu'un d'autre (package, ...), c'est toujours une bonne pratique de regarder quel est le **type des objets en entrée et en sortie**. Est-ce que la fonction que je veux utiliser prend en entrée un vecteur ou une liste, renvoie-t-elle un numérique ou une liste ? Souvent, c’est un gain de temps et d’efficacité que de se poser cette question le plus en amont possible.
+
+C’est un angle de vue qui permet aussi de comprendre en profondeur ce que fait la fonction, au delà de la nature de l'opération effectuée (par exemple passer un nombre à la racine carrée, transformer une chaîne de caractères, …) qui se comprend en général assez bien notamment parce qu'elle concentre l'attention de l'utilisateur.
+
+Privilégier le _snake_case_ au CamelCase. Si vous préférez le camelCase, utilisez-le systématiquement dans tout le script pour uniformiser le code.
 
 <span style="color:DarkBlue">**Nom des arguments**</span> **Il est préférable de nommer les arguments explicitement dans un appel de fonction**, sauf dans les cas où il ne peut y avoir d'équivoque. Exemple: `calculer_taxes(revenu = 10000, taux = 0.2)` plutôt que `calculer_taxes(10000, 0.2)`. Si on choisit de ne pas nommer les arguments dans un appel de fonction, il faut alors respecter l'*ordre* des arguments.
 Toutefois, très souvent le premier argument d'une fonction est soit sans équivoque soit très bien connu (par exemple quand il désigne l'objet auquel elle s'applique : dans `lapply(X, FUN)` le premier paramètre est le vecteur auquel on applique `lapply`). La stratégie de passer en implicite le premier argument, puis en explicite les suivants, permet donc généralement de gagner en concision sans perdre en qualité de lecture.
